@@ -1,11 +1,12 @@
 Summary:	Library to help mapping id's, mainly for NFSv
 Name:		libnfsidmap
 Version:	0.25
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://www.citi.umich.edu/projects/nfsv4/linux/libnfsidmap/%{name}-%{version}.tar.gz
 # Source0-md5:	2ac4893c92716add1a1447ae01df77ab
+Source1:	idmapd.conf
 URL:		http://www.citi.umich.edu/projects/nfsv4/linux/
 BuildRequires:	openldap-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -34,7 +35,8 @@ Dynamically loaded mapping functions.
 
 %build
 %configure \
-	--disable-static
+	--disable-static    \
+	--with-pluginpath=%{_libdir}/libnfsidmap
 %{__make}
 
 %install
@@ -43,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -D idmapd.conf $RPM_BUILD_ROOT%{_sysconfdir}/idmapd.conf
+install -D %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/idmapd.conf
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/{*.la,libnfsidmap/*.la}
 
