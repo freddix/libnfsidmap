@@ -1,7 +1,7 @@
 Summary:	Library to help mapping id's, mainly for NFSv
 Name:		libnfsidmap
 Version:	0.25
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries
 Source0:	http://www.citi.umich.edu/projects/nfsv4/linux/libnfsidmap/%{name}-%{version}.tar.gz
