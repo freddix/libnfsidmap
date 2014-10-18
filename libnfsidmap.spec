@@ -1,11 +1,11 @@
 Summary:	Library to help mapping id's, mainly for NFSv
 Name:		libnfsidmap
-Version:	0.25
-Release:	4
+Version:	0.26
+Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://www.citi.umich.edu/projects/nfsv4/linux/libnfsidmap/%{name}-%{version}.tar.gz
-# Source0-md5:	2ac4893c92716add1a1447ae01df77ab
+Source0:	https://fedorapeople.org/~steved/libnfsidmap/0.26/%{name}-%{version}.tar.bz2
+# Source0-md5:	2c0cf0e2b1665d51fa9a783679494888
 URL:		http://www.citi.umich.edu/projects/nfsv4/linux/
 BuildRequires:	openldap-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
